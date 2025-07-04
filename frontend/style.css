@@ -1,0 +1,146 @@
+/* 주식 트레이딩 백테스트 웹앱 스타일시트 */
+
+/* 전체 폰트 및 기본 스타일 */
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 서브헤더 스타일 */
+.sub-header {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2980B9;
+    margin: 0.8rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #E0E6ED;
+}
+
+/* 카드 컨테이너 스타일 */
+.card-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    border: 1px solid #E0E6ED;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 버튼 스타일 */
+.stButton>button {
+    background: linear-gradient(90deg, #3498DB, #2980B9);
+    color: white;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(90deg, #2980B9, #1F618D);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 종목 추가 버튼 스타일 */
+.add-stock-btn {
+    background: linear-gradient(90deg, #27AE60, #229954);
+    color: white;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    border: none;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.add-stock-btn:hover {
+    background: linear-gradient(90deg, #229954, #1E8449);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+/* 상태 배지 */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.status-profit {
+    background-color: rgba(39, 174, 96, 0.15);
+    color: #27AE60;
+}
+
+.status-loss {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #E74C3C;
+}
+
+.status-neutral {
+    background-color: rgba(52, 152, 219, 0.15);
+    color: #3498DB;
+}
+
+/* 선택된 종목 목록 스타일 */
+.selected-stock-item {
+    background-color: #F8F9FA;
+    border: 1px solid #E0E6ED;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.selected-stock-item:hover {
+    background-color: #E8F4FD;
+    border-color: #3498DB;
+}
+
+.stock-info {
+    font-weight: 500;
+    color: #2C3E50;
+}
+
+.stock-ticker {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+    margin-left: 0.5rem;
+}
+
+.remove-stock-btn {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.remove-stock-btn:hover {
+    background-color: #C0392B;
+}
+
+/* Streamlit 탭 스타일 */
+.stTabs [data-baseweb="tab"] button div[data-testid="stMarkdownContainer"] {
+    font-size: 40px !important;
+    font-weight: bold;
+}
+
