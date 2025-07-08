@@ -110,8 +110,8 @@ def calculate_metrics(trades: list, equity_curve: pd.Series, initial_capital: fl
             "sharpe_ratio": round(sharpe_ratio, 3) if not np.isnan(sharpe_ratio) else None
         }
     except Exception as e:
-        print("===== run_backtest에서 예외 발생 =====")
-        traceback.print_exc()
+        # print("===== run_backtest에서 예외 발생 =====")
+        # traceback.print_exc()
         return {"error": f"run_backtest error: {type(e).__name__}: {e}"}
     
 def run_backtest(data: pd.DataFrame, strategy_code: str = None, initial_capital: float = 1000000.0, stop_loss_pct: float = 5.0, trade_fee_pct: float = 0.001, sell_tax_pct: float = 0.2) -> dict:
@@ -202,11 +202,11 @@ def run_backtest(data: pd.DataFrame, strategy_code: str = None, initial_capital:
                     return {"error": "'generate_signals' function must return a pandas Series or list with the same length as the input data."}
 
             except Exception as e:
-                print(f"Error executing strategy code: {traceback.format_exc()}")
+                # print(f"Error executing strategy code: {traceback.format_exc()}")
                 return {"error": f"Error executing strategy code: {e}"} 
         else:
             # Default Strategy: Buy and Hold
-            print("--- Using Default Buy and Hold Strategy ---")
+            # print("--- Using Default Buy and Hold Strategy ---")
             signals.iloc[0] = "buy"
             # No explicit sell signal needed for buy & hold, handled at the end.
 
@@ -310,9 +310,9 @@ def run_backtest(data: pd.DataFrame, strategy_code: str = None, initial_capital:
                     "holding_period": holding_period
                 })
 
-                print("===== run_backtest에서 예외 발생 =====")
-                print("===== trades =====", trades, flush=True)
-                print("DEBUG sample trade keys:", trades[0].keys() if trades else "NO TRADES")
+                # print("===== run_backtest에서 예외 발생 =====")
+                # print("===== trades =====", trades, flush=True)
+                # print("DEBUG sample trade keys:", trades[0].keys() if trades else "NO TRADES")
 
                 # settle the trade
                 # 매도(청산) 시, 현금 보유액 증가
@@ -370,8 +370,8 @@ def run_backtest(data: pd.DataFrame, strategy_code: str = None, initial_capital:
                 "holding_period": holding_period
             })
             
-            print("===== run_backtest에서 예외 발생 =====")
-            print("===== trades =====", trades, flush=True)
+            # print("===== run_backtest에서 예외 발생 =====")
+            # print("===== trades =====", trades, flush=True)
             # 매도(청산) 시, 현금 보유액 증가
             cash += total_sell_amount
             shares_held = 0
@@ -393,8 +393,8 @@ def run_backtest(data: pd.DataFrame, strategy_code: str = None, initial_capital:
             "metrics": metrics
         }
     except Exception as e:
-        print("===== run_backtest에서 예외 발생 =====")
-        traceback.print_exc()
+        # print("===== run_backtest에서 예외 발생 =====")
+        # traceback.print_exc()
         return {"error": f"run_backtest error: {type(e).__name__}: {e}"}
 
 # Example Usage (can be run standalone for testing)

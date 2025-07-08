@@ -28,15 +28,15 @@ def execute_backtest():
     stock_data_dict = req_data.get("data")
     
     strategy_code = req_data.get("strategy_code") # Can be None
-    print(f"받은 name 파라미터: {strategy_code}", flush=True)
+    # print(f"받은 name 파라미터: {strategy_code}", flush=True)
     
     initial_capital = float(req_data.get("initial_capital", 1000000.0))
     stop_loss_pct = float(req_data.get("stop_loss_pct", 5.0))
     trade_fee_pct = float(req_data.get("trade_fee_pct", 0.001))
     sell_tax_pct = float(req_data.get("sell_tax_pct", 0.2))
 
-    print("trade_fee_pct:", trade_fee_pct, flush=True)
-    print("sell_tax_pct:", sell_tax_pct, flush=True)
+    # print("trade_fee_pct:", trade_fee_pct, flush=True)
+    # print("sell_tax_pct:", sell_tax_pct, flush=True)
 
     if not stock_data_dict:
 

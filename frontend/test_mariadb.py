@@ -47,6 +47,9 @@ class DBUpdater:
         krx = pd.read_html(url, header=0, encoding='cp949')[0]
         krx = krx[['종목코드', '회사명']]
         krx = krx.rename(columns={'종목코드': 'code', '회사명': 'company'})
+        krx['code'] = pd.to_numeric(krx['code'], errors='coerce')
+        krx = krx.dropna(subset=['code'])
+        krx['code'] = krx['code'].astype(int)
         krx.code = krx.code.map('{:06d}'.format)
         return krx
 
