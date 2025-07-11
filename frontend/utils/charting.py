@@ -12,10 +12,10 @@ def create_candlestick_chart(data: pd.DataFrame, ticker: str, trades: list = Non
         high=data["High"],
         low=data["Low"],
         close=data["Close"],
-        increasing_line_color='#fc0303',
-        decreasing_line_color='#0703fc',
-        increasing_fillcolor='#fc0303',
-        decreasing_fillcolor='#0703fc',        
+        increasing_line_color='#e71909',
+        decreasing_line_color='#115bcb',
+        increasing_fillcolor='#e71909',
+        decreasing_fillcolor='#115bcb',        
         name="가격"
     ))
 
